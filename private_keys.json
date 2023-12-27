@@ -1,0 +1,10 @@
+{
+    "local_agent": {
+        "identity_key": "44d6d264cdfa0c4d36ea7d6244eb7e35644ccf84af45fa90d690d62a3f7f41b2",
+        "wallet_key": "EzuoVWKaJyKeVcJPB0FkiVabPrCQSuuIJNaSuBDIgRo="
+    },
+    "agent": {
+        "identity_key": "7800f94428e89f5dfa3fc56fd6a34996b3d9261bb870de9dbc59b2c2b1b69d1d",
+        "wallet_key": "pU5XIGigB20duh2+2L1qwDvS4Et1C3q6S4esj3J7OqM="
+    }
+}
