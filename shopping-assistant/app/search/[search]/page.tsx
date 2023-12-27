@@ -20,20 +20,25 @@ const Products = ({ params: { search } }: { params: { search: string } }) => {
     router.push("/");
     return null;
   }
+
+  const filteredProducts = products.filter(
+    (product) =>
+      product.title.toLowerCase().includes(search.toLowerCase()) ||
+      product.description.toLowerCase().includes(search.toLowerCase()) ||
+      product.category.toLowerCase().includes(search.toLowerCase()),
+  );
+
+  if (filteredProducts.length === 0) {
+    router.push("/");
+    return null;
+  }
   return (
     <div>
       <div></div>
       <div className="grid h-[30rem] w-full grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] gap-4 overflow-y-auto">
-        {products
-          .filter(
-            (product) =>
-              product.title.toLowerCase().includes(search.toLowerCase()) ||
-              product.description
-                .toLowerCase()
-                .includes(search.toLowerCase()) ||
-              product.category.toLowerCase().includes(search.toLowerCase()),
-          )
-          .map((product) => (
+        {filteredProducts &&
+          filteredProducts.length > 0 &&
+          filteredProducts.map((product) => (
             <Product key={product.title} {...product} />
           ))}
       </div>
