@@ -2,31 +2,32 @@ from uagents import Agent, Context, Model
 from uagents.query import query
 from uagents.setup import fund_agent_if_low
 import requests
-from main import local_agent
 
 dummyjson_api_url = "https://dummyjson.com/products"
-fake_store_api_url = "https://fakestoreapi.com/products"
-
 combined_products = []
 
 class Message(Model):
     value: str
 
-agent= Agent(name="agent", endpoint=["http://localhost:8001"], port=8001)
+processor_agent = Agent(
+    name="processor_agent",
+    seed="processor_agent_seed",
+    port=8000,
+    endpoint=["http://127.0.0.1:8000/submit"],
+)
 
+# print(processor_agent.address)
 
-
-@agent.on_interval(period=60)  # Adjust the interval as needed (in seconds)
-async def display_products(ctx: Context):
+@processor_agent.on_message(model=Message)
+async def message_handler(ctx:Context, sender:str, msg:Message):
+    ctx.logger.info(f"Received msg: {msg.value}")
+    query_message = msg.value
     global combined_products  # Use the combined_products list globally
-    value = "test"
-    query_message = await query(local_agent.address, Message(value=value))
-
+    
     try:
         # Fetch product data from the DummyJSON API
         dummyjson_response = requests.get(dummyjson_api_url)
-        fakestore_response = requests.get(fake_store_api_url)
-
+        
         if dummyjson_response.status_code == 200:
             dummyjson_data = dummyjson_response.json()
             products = dummyjson_data.get("products", [])  # Get the products list if available
@@ -35,14 +36,6 @@ async def display_products(ctx: Context):
 
         else:
             ctx.logger.error(f"Failed to fetch products from DummyJSON API. Status code: {dummyjson_response.status_code}")
-
-        if fakestore_response.status_code == 200:
-            fakestore_products = fakestore_response.json()
-            combined_products.extend(fakestore_products)  # Add products to the combined list
-            ctx.logger.info("Products from Fake Store API added to the combined dataset.")
-
-        else:
-            ctx.logger.error(f"Failed to fetch products from Fake Store API. Status code: {fakestore_response.status_code}")
 
         # Search for products by title within the combined dataset
         search_query = query_message
@@ -73,7 +66,10 @@ async def display_products(ctx: Context):
 
     except requests.RequestException as e:
         ctx.logger.error(f"Request to the API failed: {e}")
+    # await ctx.send('agent1qvpd7hf852t0xz5ad0p3pgflnqg4kym8ajncyxv6r56ez85ue8zgumwwjd4', Message(value=query_message))
+
+
         
 if __name__ == "__main__":
-    fund_agent_if_low(agent.wallet.address())
-    agent.run()
+    fund_agent_if_low(processor_agent.wallet.address())
+    processor_agent.run()
