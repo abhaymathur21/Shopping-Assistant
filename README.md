@@ -23,7 +23,7 @@ We make use of a locally used agent to take input from the user and communicate 
 
 ## Setup Instructions
 1. **Clone the Repository:** Clone this repository to your local machine using `git clone https://github.com/your-repo-url.git`.
-2. **Install Dependencies:** Navigate to the project directory and install necessary dependencies using `npm install` for the frontend and `pip install -r requirements.txt` for Python.
+2. **Install Dependencies:** Navigate to the project directory (cd shopping-assistant) and install necessary dependencies using `npm i` for the frontend and `pip install -r requirements.txt` for Python.
 3. **Configure Environment:** Set up the OpenAI API key in the Fashion_Assistant.ipynb file by creating your own key after logging into the OpenAI platform.
 4. **Run the Application:** Start the application by running the appropriate commands i.e.: `npm start` for the frontend and `python app.py` for the Python backend, and access it via the specified URL.
 
@@ -46,7 +46,8 @@ We make use of a locally used agent to take input from the user and communicate 
 
 ## Future Scope
 - **Query Functionality on AgentVerse:** We failed to implement this project on AgentVerse as it does not currently support the use of query functionality, hence in the future we can make use of AgentVerse to host all the agents used in this project except 1 local agent to take input from the user
+- **Further Integration with Frontend:** Integrate the Fashion Assistant with the frontend.
 - **User Profiling Refinement:** Implement advanced algorithms to further enhance user profiling based on browsing history, preferences, and purchasing patterns. Utilize machine learning models to offer more accurate and personalized recommendations.
 - **Integration with Additional APIs:** Expand the platform's capabilities by integrating with a wider range of e-commerce APIs beyond the current sources. Incorporate APIs from major platforms such as Amazon, Flipkart, eBay, Walmart, etc., to provide a more comprehensive product catalog and diverse options.
-- **Mobile App Expansion:** Extend the shopping assistant's reach by developing dedicated mobile applications (iOS and Android) for a seamless shopping experience on mobile devices. Optimize the interface for smaller screens and enhance accessibility.
+- **Interactive Navigation Chatbot:** Implement a chatbot to navigate through the website faster and provide better assistance to the user.
 - **User Behavior Analytics:** Implement robust analytics to track user interactions, preferences, and buying behavior. Use this data to derive insights for further improving the shopping assistant's functionalities and user experience.
