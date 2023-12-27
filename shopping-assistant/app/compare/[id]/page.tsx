@@ -7,7 +7,7 @@ import { Product } from "@/components/Products";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const ProductPage = ({ params: { id } }: { params: { id: number } }) => {
+const ComparePage = ({ params: { id } }: { params: { id: number } }) => {
   const product = products.find((product) => product.id === +id);
   const router = useRouter();
 
@@ -28,14 +28,10 @@ const ProductPage = ({ params: { id } }: { params: { id: number } }) => {
     images,
     source,
   } = product;
-  const recommendedProducts = products
-    .filter((product) => product.category === category && product.id !== +id)
-    .toSorted((a, b) => b.rating - a.rating)
-    .slice(0, 3);
 
   return (
     <div className="grid max-h-[32rem] gap-8 overflow-y-auto px-4">
-      <div className="grid grid-cols-2">
+      <div className="grid">
         <div className="flex h-64 w-64 flex-col items-center justify-center place-self-center">
           <Image
             src={thumbnail}
@@ -104,24 +100,19 @@ const ProductPage = ({ params: { id } }: { params: { id: number } }) => {
           >
             Add to cart
           </Button>
-
-          <Button className="\ mt-4 w-full" variant="outline">
-            <Link href={`/compare/${id}`}>Compare Prices</Link>
-          </Button>
-        </div>
-      </div>
-
-      <div>
-        <h2 className="text-lg font-bold text-gray-400">
-          You might also like..
-        </h2>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] gap-4">
-          {recommendedProducts.map((product) => (
-            <Product key={product.title} {...product} />
-          ))}
         </div>
       </div>
     </div>
   );
 };
-export default ProductPage;
+
+const ProductCompareView = ({ id }: { id: number }) => {
+  return (
+    <div>
+      <h1>Compare Prices</h1>
+      <p>Product ID: {id}</p>
+    </div>
+  );
+};
+
+export default ComparePage;

@@ -6,10 +6,22 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const Categories = () => {
   const categories = ["Women", "Men", "Kids", "Shoes", "Electronics", "Other"];
   const router = useRouter();
+
+  const [search, setSearch] = useState("");
+
+  const handleSearch = async () => {
+    await fetch("http://localhost:5000/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ search }),
+    });
+    // router.push(`/search/${search}`);
+  };
 
   return (
     <nav className="flex items-center justify-between gap-8 border-b-2 border-gray-400 px-8">
@@ -43,11 +55,15 @@ const Categories = () => {
         ))}
       </RadioGroup>
       <div className="flex w-full max-w-sm items-center space-x-2">
-        <Input type="search" placeholder="Search" />
+        <Input
+          type="search"
+          placeholder="Search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <Button
           type="submit"
           className="aspect-square h-8 p-2"
-          onClick={() => console.log("search")}
+          onClick={handleSearch}
         >
           <Search className="h-4 w-4" />
         </Button>
