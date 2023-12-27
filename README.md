@@ -11,8 +11,8 @@ We make use of a locally used agent to take input from the user and communicate 
 - **Comparing Prices:** Helps users make the best decision according to their budget by comparing prices of identical items from different source.
 
 ## User Interface
-![image](https://github.com/ShreyaShah108/dummy_hackAI/assets/113776577/2f1b5960-c381-4202-97cb-b498984cf53e)
-![image](https://github.com/ShreyaShah108/dummy_hackAI/assets/113776577/9c78e46f-e08f-4db7-ac47-89550cf06529)
+![image](https://github.com/abhaymathur21/HackAI_Round_2/assets/113776577/fe98ad88-01d0-48e0-a6aa-ed95cd876e93)
+![image](https://github.com/abhaymathur21/HackAI_Round_2/assets/113776577/652491bd-a7b8-4e46-8259-f64abeb64d59)
 
 
 ## Technologies Used
