@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -10,22 +12,36 @@ import { products } from "@/data/products.json";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Combobox } from "./Combobox";
+import { useRouter } from "next/navigation";
 
-const Products = () => {
+const Products = ({ params: { search } }: { params: { search: string } }) => {
+  const router = useRouter();
+  if (!search || search === "") {
+    router.push("/");
+    return null;
+  }
   return (
     <div>
       <div></div>
       <div className="grid h-[30rem] w-full grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] gap-4 overflow-y-auto">
-        {products.map((product) => (
-          <Product key={product.title} {...product} />
-        ))}
+        {products
+          .filter(
+            (product) =>
+              product.title.toLowerCase().includes(search.toLowerCase()) ||
+              product.description
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
+              product.category.toLowerCase().includes(search.toLowerCase()),
+          )
+          .map((product) => (
+            <Product key={product.title} {...product} />
+          ))}
       </div>
     </div>
   );
 };
 
-export const Product = ({
+const Product = ({
   id,
   title,
   description,

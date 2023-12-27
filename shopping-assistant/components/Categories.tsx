@@ -15,12 +15,15 @@ const Categories = () => {
   const [search, setSearch] = useState("");
 
   const handleSearch = async () => {
-    await fetch("http://localhost:5000/search", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ search }),
-    });
-    // router.push(`/search/${search}`);
+    try {
+      await fetch("http://localhost:5000/search", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ search }),
+      });
+    } catch (error) {}
+
+    router.push(`/search/${search}`);
   };
 
   return (
