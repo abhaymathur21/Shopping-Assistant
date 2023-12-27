@@ -21,11 +21,13 @@ We make use of a locally used agent to take input from the user and communicate 
 - **Frontend:** Use modern frameworks like React for the user interface.
 - **Backend:** Employ backend technologies like Flask to integrate UAgents with our frontend.
 
-## Setup Instructions ?
+## Setup Instructions
 1. **Clone the Repository:** Clone this repository to your local machine using `git clone https://github.com/your-repo-url.git`.
 2. **Install Dependencies:** Navigate to the project directory and install necessary dependencies using `npm install` for the frontend and `pip install -r requirements.txt` for Python.
-3. **Configure Environment:** Set up the OpenAI API key in the chatbot.py file
+3. **Configure Environment:** Set up the OpenAI API key in the Fashion_Assistant.ipynb file by creating your own key after logging into the OpenAI platform.
 4. **Run the Application:** Start the application by running the appropriate commands i.e.: `npm start` for the frontend and `python app.py` for the Python backend, and access it via the specified URL.
+
+### Note: Search example: 'iPhone 9', the search options are limited since dummy data is used
 
 ## Assumptions
 
@@ -35,7 +37,7 @@ We make use of a locally used agent to take input from the user and communicate 
 - **Consistency in API Responses:** It's presumed that the APIs used for fetching product information or user-related data maintain consistency in their responses, adhering to documented formats and structures.
 
 ### API Access
-- **Dummy API Usage:** For demonstration purposes, this project utilizes 2 dummy APIs with 30 items each and having the same format of data. However, in a real-world scenario, multiple authentic APIs from platforms like Amazon, Flipkart, etc., would be integrated to fetch actual product data, prices, availability, and user-related information.
+- **Dummy API Usage:** For demonstration purposes, this project utilizes 2 dummy APIs with 30 items each and having the same format of data, therefore has limited data. However, in a real-world scenario, multiple authentic APIs from platforms like Amazon, Flipkart, etc., would be integrated to fetch actual product data, prices, availability, and user-related information.
 - **API Key Management:** Practical APIs often require API keys or access tokens. The assumption here is that appropriate access keys are obtained and managed securely to interact with real APIs from respective e-commerce platforms.
 - **Rate Limiting and Quotas:** Real APIs commonly enforce rate limiting and quotas to control access. This project assumes that such limits are understood and adhered to in the integration process with live APIs.
 
