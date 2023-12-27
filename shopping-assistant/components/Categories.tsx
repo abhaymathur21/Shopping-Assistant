@@ -24,6 +24,7 @@ const Categories = () => {
     } catch (error) {}
 
     router.push(`/search/${search}`);
+    setSearch("");
   };
 
   return (
