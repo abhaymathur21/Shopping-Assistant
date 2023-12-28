@@ -17,17 +17,24 @@ We make use of a locally used agent to take input from the user and communicate 
 
 ## Technologies Used
 - **uAgents:** For the purpose of secure peer-to-peer communication, UAgents used to process data from APIs.
-- **Natural Language Processing (NLP):** Leverage cutting edge AI technologies NLP techniques such as Large Language Models for Natural Language Processing tasks including a Fashion Assistant for personalized fashion recommendations.
-- **Frontend:** Use modern frameworks like React for the user interface.
-- **Backend:** Employ backend technologies like Flask to integrate UAgents with our frontend.
+- **Natural Language Processing (NLP):** Leverage cutting edge ML technologies such as Large Language Models for Natural Language Processing tasks including a Fashion Assistant for personalized fashion recommendations.
+- **Frontend:** Used a modern robust frontend framework called Next.js for the user interface.
+- **Backend:** Employed a flexible and customizable backend technology called Flask to integrate uAgents with our frontend.
 
 ## Setup Instructions
 1. **Clone the Repository:** Clone this repository to your local machine using `git clone https://github.com/your-repo-url.git`.
 2. **Install Dependencies:** Navigate to the project directory (cd shopping-assistant) and install necessary dependencies using `npm i` for the frontend and `pip install -r requirements.txt` for Python.
 3. **Configure Environment:** Set up the OpenAI API key in the Fashion_Assistant.ipynb file by creating your own key after logging into the OpenAI platform.
-4. **Run the Application:** Start the application by running the appropriate commands i.e.: `npm start` for the frontend and `python app.py` for the Python backend, and access it via the specified URL.
+4. **Run the Application:** Start the application by running the appropriate commands i.e.: `npm run dev` for the frontend and `python app.py`, `python main.py` and `python processor.py` for the uAgents and Python backend, and access it via the specified URL.
 
 ### Note: Search example: 'iPhone 9', the search options are limited since dummy data is used
+
+## Demo Video
+
+
+https://github.com/abhaymathur21/HackAI_Round_2/assets/102252920/a98bc64b-e867-4a63-8793-24f8539699c5
+
+
 
 ## Assumptions
 
