@@ -2,13 +2,13 @@
 
 ## Overview
 This project aims to create a personalised shopping assistant using uAgents to enhance the shopping experience for users. The shopping assistant will intelligently assist users in finding products, providing recommendations, comparing prices of identical products from multiple sources and making purchases on behalf of the user.
-We make use of a locally used agent to take input from the user and communicate it to the processor agent, which collects data based on either the user input from the search bar and chatbot, or filters applied. Two more agents are used to make transaction on behalf of the user by sending a token from the customer account to the merchant account.
+We make use of a locally used agent to take input from the user and communicate it to the processor agent, which collects data based on either the user input from the search bar and chatbot, or filters applied. Two more agents are used to make transactions on behalf of the user by sending a token from the customer account to the merchant account.
 
 ## Features
 - **Fashion Assistant:** An AI tool created using Prompt Engineering in Open AI Playground that recommends clothing and accessories to the user based on details about the user's personality such as taste in music, location, personal aesthetic, etc. given as input to the program.
 - **Product Recommendations:** Offer product recommendations based on product selection.
 - **Search and Navigation:** Enable users to efficiently search for products and navigate through various categories from multiple sources using intuitive interfaces.
-- **Comparing Prices:** Helps users make the best decision according to their budget by comparing prices of identical items from different source.
+- **Comparing Prices:** Helps users make the best decision according to their budget by comparing prices of identical items from different sources.
 
 ## User Interface
 ![image](https://github.com/abhaymathur21/HackAI_Round_2/assets/113776577/fe98ad88-01d0-48e0-a6aa-ed95cd876e93)
@@ -16,8 +16,8 @@ We make use of a locally used agent to take input from the user and communicate 
 
 
 ## Technologies Used
-- **uAgents:** For the purpose of secure peer-to-peer communication, UAgents used to process data from APIs.
-- **Natural Language Processing (NLP):** Leverage cutting edge ML technologies such as Large Language Models for Natural Language Processing tasks including a Fashion Assistant for personalized fashion recommendations.
+- **uAgents:** For the purpose of secure peer-to-peer communication, uAgents are used to process data from APIs.
+- **Natural Language Processing (NLP):** Leverage cutting-edge ML technologies such as Large Language Models for Natural Language Processing tasks including a Fashion Assistant for personalized fashion recommendations.
 - **Frontend:** Used a modern robust frontend framework called Next.js for the user interface.
 - **Backend:** Employed a flexible and customizable backend technology called Flask to integrate uAgents with our frontend.
 
